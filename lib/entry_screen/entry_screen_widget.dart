@@ -33,7 +33,7 @@ class _EntryScreenWidgetState extends State<EntryScreenWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         title: Text(
-          'JaeHo Song',
+          'JaeHo Song 2.0',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: Colors.white,
