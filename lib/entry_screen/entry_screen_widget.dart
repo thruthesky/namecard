@@ -95,15 +95,13 @@ class _EntryScreenWidgetState extends State<EntryScreenWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        final phoneNumberVal =
-                            phoneNumberTextFieldController.text;
+                        final phoneNumberVal = phoneNumberTextFieldController.text;
                         if (phoneNumberVal == null ||
                             phoneNumberVal.isEmpty ||
                             !phoneNumberVal.startsWith('+')) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              content: Text(
-                                  'Phone Number is required and has to start with +.'),
+                              content: Text('Phone Number is required and has to start with +.'),
                             ),
                           );
                           return;
@@ -115,8 +113,7 @@ class _EntryScreenWidgetState extends State<EntryScreenWidget> {
                             await Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    SMSVerificationScreenWidget(),
+                                builder: (context) => SMSVerificationScreenWidget(),
                               ),
                               (r) => false,
                             );
@@ -128,11 +125,10 @@ class _EntryScreenWidgetState extends State<EntryScreenWidget> {
                         width: double.infinity,
                         height: 40,
                         color: FlutterFlowTheme.of(context).primaryColor,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                ),
+                        textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                              fontFamily: 'Poppins',
+                              color: Colors.white,
+                            ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1,
@@ -140,6 +136,12 @@ class _EntryScreenWidgetState extends State<EntryScreenWidget> {
                         borderRadius: 8,
                       ),
                     ),
+                  ),
+                  TextButton(
+                    child: Text('Say Hi'),
+                    onPressed: () {
+                      throw 'How are you?';
+                    },
                   ),
                 ],
               ),

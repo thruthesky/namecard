@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:name_card/global.dart';
 import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
 
@@ -10,12 +13,30 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'index.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  await FlutterFlowTheme.initialize();
+void main() {
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(MyApp());
+    FlutterError.onError = (FlutterErrorDetails details) {
+      /// Flutter exceptions.
+      debugPrint("--> FlutterError.onError : from Flutter.");
+      debugPrint("----------------------------------------");
+      FlutterError.dumpErrorToConsole(details);
+      scaffoldMessengerState.showSnackBar(SnackBar(content: Text(details.exception.toString())));
+    };
+
+    await Firebase.initializeApp();
+    await FlutterFlowTheme.initialize();
+    runApp(MyApp());
+  }, (error, stackTrace) {
+    /// dart(outside flutter, including Firebase exceptions) exceptions come here.
+    debugPrint("--> runZoneGuarded() : from Dart (outside Flutter).");
+    debugPrint("---------------------------------------------------");
+    debugPrint("--> runtimeType: ${error.runtimeType}");
+    debugPrint("Dart Error :  $error");
+    debugPrintStack(stackTrace: stackTrace);
+    scaffoldMessengerState.showSnackBar(SnackBar(content: Text(error.toString())));
+  });
 }
 
 class MyApp extends StatefulWidget {
@@ -23,8 +44,7 @@ class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
 
-  static _MyAppState of(BuildContext context) =>
-      context.findAncestorStateOfType<_MyAppState>();
+  static _MyAppState of(BuildContext context) => context.findAncestorStateOfType<_MyAppState>();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -89,6 +109,7 @@ class _MyAppState extends State<MyApp> {
           : currentUser.loggedIn
               ? HomeScreenWidget()
               : EntryScreenWidget(),
+      scaffoldMessengerKey: scaffoldMessengerKey,
     );
   }
 }
