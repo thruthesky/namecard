@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>391614224917-ngp0aiha6fer3cforufuh0sea3ksr65m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.391614224917-ngp0aiha6fer3cforufuh0sea3ksr65m</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>391614224917-195j9eqaac1ke6ja0kfebkd1nh9aad6b.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyABMW6ugWVFUgzdC7ucsa4GTa4f5HidqrQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>391614224917</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.withcenter.namecard</string>
+	<key>PROJECT_ID</key>
+	<string>withcenter-test-project</string>
+	<key>STORAGE_BUCKET</key>
+	<string>withcenter-test-project.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:391614224917:ios:9ee0439ea1e828c62c0c1c</string>
+	<key>DATABASE_URL</key>
+	<string>https://withcenter-test-project-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
