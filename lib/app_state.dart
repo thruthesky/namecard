@@ -25,6 +25,8 @@ class FFAppState {
     _runCounter = _value;
     prefs.setInt('ff_runCounter', _value);
   }
+
+  int buttonCounter = 100;
 }
 
 LatLng _latLngFromString(String val) {
